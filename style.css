@@ -1,0 +1,242 @@
+body {
+    background-color: #eaeaea;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 150px);  
+    gap: 50px;
+    justify-content: center;
+    padding: 40px;
+}
+
+#dial1, #dial2, #dial3, #dial4, #dial5, #dial6 #dial7 #dial8 {
+    margin-top: 50;
+    margin-left: 0;
+}
+
+#dial1 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dial-1-inner {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 111px;
+    width: 111px;
+    box-shadow: 12px 12px 8px rgba(163, 158, 158, 0.55);
+}
+
+#dial2 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.dial-2-inner {
+    background-color: #848484;
+    border-radius: 50%;
+    height: 111px;
+    width: 111px;
+    box-shadow: 12px 12px 8px rgba(163, 158, 158, 0.55);
+}
+
+#dial3 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#dial3 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    position: relative;  
+}
+
+.dial-3-stroke {
+    background-color: #000000;
+    width: 6.5px;
+    height: 53px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+}
+
+#dial4 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    position: relative;  
+}
+
+.dial-4-stroke-top {
+    background-color: #000000;
+    width: 8.5px;
+    height: 40px;
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 7px;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+}
+
+
+.dial-4-stroke-left {
+    background-color: #ffffff;
+    width: 40px;         
+    height: 8.5px;
+    position: absolute;
+    left: 12px;         
+    top: 50%;
+    transform: translateY(-50%);  
+    border-radius: 7px;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+}
+
+.dial-4-stroke-right {
+    background-color: #ffffff;
+    width: 40px;
+    height: 8.5px;
+    position: absolute;
+    right: 12px; 
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 7px;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+}
+
+.dial-4-stroke-bottom {
+    background-color: #ffffff;
+    width: 8.5px;
+    height: 40px;
+    position: absolute;
+    bottom: 12px;      
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 7px;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+}
+
+#dial5 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    position: relative;  
+}
+
+.dial-5-dot-indicator {
+    background-color: #000000;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.dial-5-dot {
+    background-color: #ffffff;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 4px 4px 4px rgba(163, 158, 158, 0.55);
+}
+
+#dial6 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dial-6-inner {
+    background-color: #848484;
+    border-radius: 50%;
+    height: 85px;
+    width: 85px;
+    box-shadow: 12px 12px 12px rgba(163, 158, 158, 0.55);
+    position: relative;
+}
+
+.dial-6-stroke {
+  background-color: #d8d8d8;
+    border-radius: 8px;
+    width: 55px;
+    height: 8px;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#dial7 {
+    background-color: #d8d8d8;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: 12px 12px 14px rgba(163, 158, 158, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dial-7-inner-circle {
+    background-color: #000000;
+    border-radius: 50%;
+    height: 65px;
+    width: 65px;
+    position: relative;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+    z-index: 2;
+}
+
+.dial-7-inner-stroke {
+    background-color: #000000;
+    height: 14px;
+    width: 130px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    border-radius: 8px;
+    position: absolute;
+    box-shadow: 3px 3px 5px rgba(163, 158, 158, 0.55);
+    z-index: 1;
+}
