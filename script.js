@@ -72,3 +72,65 @@ dial14Strokes.forEach((stroke, i) => {
     stroke.style.top = y + 'px';
     stroke.style.transform = `translate(-50%, -50%) rotate(${(i / dial14Total) * 360}deg)`;
 });
+
+const dial22Spokes = document.querySelectorAll('.dial22-spoke');
+const dial22Total = dial22Spokes.length;
+
+dial22Spokes.forEach((spoke, i) => {
+    const angle = (i / dial22Total) * 360;
+    spoke.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
+    spoke.style.transformOrigin = 'bottom center';
+});
+
+const dial25Strokes = document.querySelectorAll('.dial25-stroke');
+const dial25Total = dial25Strokes.length;
+const dial25Radius = 60;
+const dial25CenterX = 75;
+const dial25CenterY = 75;
+
+dial25Strokes.forEach((stroke, i) => {
+    const angle = (i / dial25Total) * 2 * Math.PI - Math.PI / 2;
+    const x = dial25CenterX + dial25Radius * Math.cos(angle);
+    const y = dial25CenterY + dial25Radius * Math.sin(angle);
+    stroke.style.left = x + 'px';
+    stroke.style.top = y + 'px';
+    stroke.style.transform = `translate(-50%, -50%) rotate(${(i / dial25Total) * 360}deg)`;
+});
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const angle = (scrollY * 0.5) % 360;
+    const rad = angle * (Math.PI / 180);
+    
+    const distance = 12;
+    const x = Math.round(distance * Math.sin(rad));
+    const y = Math.round(distance * Math.cos(rad));
+    const blur = 12;
+
+    document.querySelectorAll('[id^="dial"]').forEach(dial => {
+        dial.style.boxShadow = `${x}px ${y}px ${blur}px rgba(163, 158, 158, 0.55)`;
+    });
+
+
+    document.querySelectorAll('.dial-1-inner, .dial-2-inner, .dial-6-inner').forEach(el => {
+        el.style.boxShadow = `${x}px ${y}px 8px rgba(163, 158, 158, 0.55)`;
+    });
+
+    document.querySelectorAll('.ring-1, .ring-2, .ring-3').forEach(el => {
+        el.style.boxShadow = `${x}px ${y}px 8px rgba(163, 158, 158, 0.9)`;
+    });
+
+    document.querySelectorAll('.pill-shape, .chip-body').forEach(el => {
+        el.style.boxShadow = `${x}px ${y}px 8px rgba(163, 158, 158, 0.4)`;
+    });
+});
+
+window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const rotation = scrollY * 0.5;
+
+    const dial3 = document.querySelector('#dial3');
+    if (dial3) {
+        dial3.style.transform = `rotate(${rotation}deg)`;
+    }
+});
