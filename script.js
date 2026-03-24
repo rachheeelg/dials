@@ -13,7 +13,7 @@ dots.forEach((dot, i) => {
     dot.style.transform = 'translate(-50%, -50%)';
 });
 
-const clockStrokes = document.querySelectorAll('.dial11-strokes-wrapper .dial11-stroke');  /* ← updated */
+const clockStrokes = document.querySelectorAll('.dial11-strokes-wrapper .dial11-stroke');
 const clockTotal = clockStrokes.length;
 const clockRadius = 68;
 const clockCenterX = 75;
@@ -28,7 +28,7 @@ clockStrokes.forEach((stroke, i) => {
     stroke.style.transform = `translate(-50%, -50%) rotate(${(i / clockTotal) * 360}deg)`;
 });
 
-const holes = document.querySelectorAll('.dial12-hole');
+const holes = document.querySelectorAll('.dial12-rotating-group .dial12-hole');
 const holesTotal = holes.length;
 const holesRadius = 35;
 const holesCenterX = 75;
@@ -107,9 +107,14 @@ window.addEventListener('scroll', () => {
     const shadowY = Math.round(distance * Math.cos(rad));
     const blur = 12;
 
-    document.querySelectorAll('[id^="dial"]:not(#dial11)').forEach(dial => {
+    document.querySelectorAll('[id^="dial"]:not(#dial11):not(#dial16)').forEach(dial => {
         dial.style.boxShadow = `${shadowX}px ${shadowY}px ${blur}px rgba(163, 158, 158, 0.55)`;
     });
+
+    const dial16 = document.querySelector('#dial16');
+    if (dial16) {
+        dial16.style.boxShadow = `${shadowX}px ${shadowY}px ${blur}px rgba(163, 158, 158, 0.55)`;
+    }
 
     document.querySelectorAll('.dial-1-inner, .dial-2-inner, .dial-6-inner').forEach(el => {
         el.style.boxShadow = `${shadowX}px ${shadowY}px 8px rgba(163, 158, 158, 0.55)`;
@@ -119,7 +124,7 @@ window.addEventListener('scroll', () => {
         el.style.boxShadow = `${shadowX}px ${shadowY}px 8px rgba(163, 158, 158, 0.9)`;
     });
 
-    document.querySelectorAll('.pill-shape, .chip-body').forEach(el => {
+    document.querySelectorAll('.pill-shape').forEach(el => {
         el.style.boxShadow = `${shadowX}px ${shadowY}px 8px rgba(163, 158, 158, 0.4)`;
     });
 
@@ -156,11 +161,59 @@ window.addEventListener('scroll', () => {
         square.style.transform = `translate(${joystickX}px, ${joystickY}px)`;
     }
 
-    const dial11Wrapper = document.querySelector('.dial11-strokes-wrapper'); 
+    const dial11Wrapper = document.querySelector('.dial11-strokes-wrapper');
     if (dial11Wrapper) dial11Wrapper.style.transform = `rotate(${rotation}deg)`;
 
-const holes = document.querySelectorAll('.dial12-rotating-group .dial12-hole');
+    const dial12Group = document.querySelector('.dial12-rotating-group');
+    if (dial12Group) dial12Group.style.transform = `rotate(${rotation}deg)`;
 
-const dial12Group = document.querySelector('.dial12-rotating-group');
-if (dial12Group) dial12Group.style.transform = `rotate(${rotation}deg)`;
+    const dial13 = document.querySelector('#dial13');
+    if (dial13) dial13.style.transform = `rotate(${rotation}deg)`;
+
+    const dial14 = document.querySelector('#dial14');
+    if (dial14) dial14.style.transform = `rotate(${rotation}deg)`;
+
+    const dial15Group = document.querySelector('.dial15-rotating-group');
+    if (dial15Group) dial15Group.style.transform = `rotate(${rotation}deg)`;
+
+    const chip = document.querySelector('.chip');
+    if (chip) chip.style.transform = `rotate(${rotation}deg)`;
+
+    const dial17 = document.querySelector('#dial17');
+    if (dial17) dial17.style.transform = `rotate(${rotation}deg)`;
+
+    const dial18 = document.querySelector('#dial18');
+    if (dial18) dial18.style.transform = `rotate(${rotation}deg)`;
+
+    const dial19 = document.querySelector('#dial19');
+    if (dial19) dial19.style.transform = `rotate(${rotation}deg)`;
+
+    const dial20 = document.querySelector('#dial20');
+    if (dial20) dial20.style.transform = `rotate(${rotation}deg)`;
+
+    const dial21 = document.querySelector('#dial21');
+    if (dial21) dial21.style.transform = `rotate(${rotation}deg)`;
+
+    const dial22ActiveSpokes = document.querySelectorAll('#dial22 .dial22-spoke');
+    const dial22ActiveIndex = Math.floor((scrollY / 300) % dial22ActiveSpokes.length);
+    dial22ActiveSpokes.forEach((spoke, i) => {
+        spoke.style.backgroundColor = i === dial22ActiveIndex ? '#f1f1f1' : '#848484';
+    });  
+
+    const dial23Circle = document.querySelector('.dial23-circle');
+    if (dial23Circle) dial23Circle.style.transform = `rotate(${rotation}deg)`;
+
+    const dial24 = document.querySelector('#dial24');
+    if (dial24) dial24.style.transform = `rotate(${rotation}deg)`;
+
+    const dial25ActiveSpokes = document.querySelectorAll('#dial25 .dial25-stroke');
+const dial25Total2 = dial25ActiveSpokes.length;
+const dial25ActiveIndex = Math.floor((rotation % 360) / (360 / dial25Total2));
+dial25ActiveSpokes.forEach((stroke, i) => {
+    stroke.style.backgroundColor = i === dial25ActiveIndex ? '#f1f1f1' : '#848484';
+});
+
+const dial25Drop = document.querySelector('.dial25-drop');
+if (dial25Drop) dial25Drop.style.transform = `translate(-50%, -40%) rotate(${rotation}deg)`;
+
 });
