@@ -13,7 +13,7 @@ dots.forEach((dot, i) => {
     dot.style.transform = 'translate(-50%, -50%)';
 });
 
-const clockStrokes = document.querySelectorAll('.dial11-stroke');
+const clockStrokes = document.querySelectorAll('.dial11-strokes-wrapper .dial11-stroke');  /* ← updated */
 const clockTotal = clockStrokes.length;
 const clockRadius = 68;
 const clockCenterX = 75;
@@ -139,21 +139,28 @@ window.addEventListener('scroll', () => {
     });
 
     const dial6Inner = document.querySelector('.dial-6-inner');
-if (dial6Inner) {
-    dial6Inner.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;  
-}
+    if (dial6Inner) {
+        dial6Inner.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+    }
 
-const dial7 = document.querySelector('#dial7');
-if (dial7) dial7.style.transform = `rotate(${rotation}deg)`;
+    const dial7 = document.querySelector('#dial7');
+    if (dial7) dial7.style.transform = `rotate(${rotation}deg)`;
 
-const dial9 = document.querySelector('#dial9');
-if (dial9) dial9.style.transform = `rotate(${rotation}deg)`;
+    const dial9 = document.querySelector('#dial9');
+    if (dial9) dial9.style.transform = `rotate(${rotation}deg)`;
 
-const square = document.querySelector('.square');
-if (square) {
-    const joystickX = Math.sin(rad) * 20;  // ← 20px max movement
-    const joystickY = Math.cos(rad) * 20;
-    square.style.transform = `translate(${joystickX}px, ${joystickY}px)`;
-}
+    const square = document.querySelector('.square');
+    if (square) {
+        const joystickX = Math.sin(rad) * 20;
+        const joystickY = Math.cos(rad) * 20;
+        square.style.transform = `translate(${joystickX}px, ${joystickY}px)`;
+    }
 
-}); 
+    const dial11Wrapper = document.querySelector('.dial11-strokes-wrapper'); 
+    if (dial11Wrapper) dial11Wrapper.style.transform = `rotate(${rotation}deg)`;
+
+const holes = document.querySelectorAll('.dial12-rotating-group .dial12-hole');
+
+const dial12Group = document.querySelector('.dial12-rotating-group');
+if (dial12Group) dial12Group.style.transform = `rotate(${rotation}deg)`;
+});
